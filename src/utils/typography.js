@@ -1,6 +1,6 @@
 import Typography from 'typography'
 
-export default typography = new Typography({
+const typography = new Typography({
     baseFontSize: "16px",
     baseLineHeight: "1.6",
     googleFonts: [
@@ -24,3 +24,5 @@ export default typography = new Typography({
     bodyFontFamily: ["Raleway", "Georgia", "serif"],
     bodyWeight: 500
 })
+
+export default typography
