@@ -1,0 +1,20 @@
+{
+    "menu": [
+        {
+            "name": "Unlimited Chicken and Pasta",
+            "price": "PHP 299.00",
+            "description": "Authentic Italian pasta in our signature marinara sauce with a side of chicken wings flavored either Parmesan or Buffalo. Unlimited servings!",
+            "image": {
+                "src": "./images/unli-chx-pasta.jpg"
+            }
+        },
+        {
+            "name": "Signature Italian Pasta",
+            "price": "PHP 120.00",
+            "description": "Authentic Italian pasta in our signature marinara sauce. Will make you wanna say 'Mamma Mia!'",
+            "image": {
+                "src": "./images/pasta.jpg"
+            }
+        }
+    ]
+}
