@@ -1,8 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `Antonio's`,
-    description: `Unlimited Chicken and Pasta for only PHP 299!.`,
+    description: `Since 2018, we have been serving unlimited chicken wings and Italian inspired pasta. We are dedicated to imbibe our brand of flavor to every chicken bite and pasta mouthful.`,
     author: `vocafeuvre`,
+    mobile: "+63 123 456 7890",
+    email: "antonioschxpasta@gmail.com",
+    phone: "234 5678",
+    twitter: "",
+    facebook: "",
+    instagram: ""
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
