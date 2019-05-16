@@ -8,6 +8,7 @@ export const Hero = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
 `
 
@@ -15,7 +16,6 @@ export const HeroTitle = styled.h1`
     font-size: 2.6em;
     text-align: center;
     margin-bottom: 5px;
-    background-color: #aa3333;
 `
 
 export const HeroSubtitle = styled.h2`
@@ -23,7 +23,6 @@ export const HeroSubtitle = styled.h2`
     text-align: center;
     margin-bottom: 5px;
     font-weight: 500;
-    background-color: #aa3333;
 `
 
 export const HeroContent = styled.div`

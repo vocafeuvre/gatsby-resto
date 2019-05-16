@@ -17,10 +17,18 @@ const Intro = () => (
                         color: #ffffff;
                     `}
                 >
-                    <HeroTitle>
+                    <HeroTitle
+                        css={css`
+                            background-color: #aa3333;
+                        `}
+                    >
                         Unlimited Chicken and Pasta for only PHP 299!
                     </HeroTitle>
-                    <HeroSubtitle>
+                    <HeroSubtitle
+                        css={css`
+                            background-color: #aa3333;
+                        `}
+                    >
                         Sumptuous authentic Italian pasta paired with
                         buffalo-hot chicken wings!
                     </HeroSubtitle>
@@ -30,10 +38,13 @@ const Intro = () => (
                                 border: 10px solid white;
                             `}
                         >
-                            <Img fluid={fluidImage} style={{
-                                height: "400px",
-                                width: "700px"
-                            }}/>
+                            <Img
+                                fluid={fluidImage}
+                                style={{
+                                    height: "400px",
+                                    width: "700px",
+                                }}
+                            />
                         </div>
                     </HeroContent>
                 </Hero>

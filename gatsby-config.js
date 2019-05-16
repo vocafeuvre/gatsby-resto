@@ -8,7 +8,12 @@ module.exports = {
     phone: "234 5678",
     twitter: "",
     facebook: "",
-    instagram: ""
+    instagram: "",
+    location: {
+      address: "Garden Bloc, Asiatown IT Park, Apas, Cebu City",
+      latitude: 10.3301882,
+      longitude: 123.9050796
+    }
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
