@@ -13,7 +13,7 @@ const Intro = () => (
             return (
                 <Hero
                     css={css`
-                        padding-top: 140px;
+                        padding-top: 80px;
                         color: #ffffff;
                     `}
                 >
