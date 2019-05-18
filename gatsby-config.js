@@ -54,6 +54,12 @@ module.exports = {
       options: {
         pathToConfigModule: 'src/utils/typography'
       }
+    },
+    { 
+      resolve: `gatsby-plugin-recaptcha`,
+      async: true,
+      defer: true,
+      args: `?onload=onloadCallback&render=explicit`
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

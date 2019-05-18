@@ -1,7 +1,9 @@
 import Typography from 'typography'
 
+export const BASE_FONT_SIZE_PX = 16
+
 const typography = new Typography({
-    baseFontSize: "16px",
+    baseFontSize: `${BASE_FONT_SIZE_PX}px`,
     baseLineHeight: "1.6",
     googleFonts: [
         {

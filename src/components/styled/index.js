@@ -1,4 +1,11 @@
+import React from "react"
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+import { BASE_FONT_SIZE_PX } from "../../utils/typography"
+
+const ERROR_COLOR = "#cc6666"
+const SUCCESS_COLOR = "#007740"
+const MAIN_COLOR = "#aa3333"
 
 export const Hero = styled.section`
     position: relative;
@@ -57,7 +64,7 @@ export const SubHeroContentDetail = styled.p`
     margin-bottom: 5px;
 `
 
-export const FormElement = styled.div`
+const FormElementBase = styled.div`
     border-radius: 20px;
     background-color: white;
 
@@ -86,10 +93,92 @@ export const FormElement = styled.div`
     }
 `
 
+export const FormElement = ({ error = false, children }) => (
+    <FormElementBase
+        css={
+            error &&
+            css`
+                background-color: ${ERROR_COLOR};
+                & input,
+                textarea {
+                    background-color: ${ERROR_COLOR};
+                }
+            `
+        }
+    >
+        {children}
+    </FormElementBase>
+)
+
 export const FormButton = styled.button`
     margin-top: 10px;
     padding: 10px 5px;
     border: none;
+    outline: none;
     border-radius: 20px;
     cursor: pointer;
 `
+const NOTIF_PADDING_PX = 15
+export const NOTIF_HEIGHT_PX = BASE_FONT_SIZE_PX * 3 + NOTIF_PADDING_PX * 2
+export const NOTIF_DIST_TO_EDGE = 20
+
+const Notification = styled.div`
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: ${NOTIF_DIST_TO_EDGE}px;
+    color: #ffffff;
+    z-index: 101;
+    width: 400px;
+    height: ${NOTIF_HEIGHT_PX}px;
+    padding: ${NOTIF_PADDING_PX}px;
+    font-size: .9em;
+    overflow: scroll;
+    animation: pop 100ms ease-out;
+
+    @keyframes pop {
+        0% {
+            transform: scale(0.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+`
+
+export const DefaultNotification = ({ text, position }) => (
+    <Notification
+        css={css`
+            background-color: ${MAIN_COLOR};
+            bottom: ${position}px;
+        `}
+    >
+        {text}
+    </Notification>
+)
+
+export const SuccessNotification = ({ text, position }) => {
+    return (
+        <Notification
+            css={css`
+                background-color: ${SUCCESS_COLOR};
+                bottom: ${position}px;
+            `}
+        >
+            {text}
+        </Notification>
+    )
+}
+
+export const ErrorNotification = ({ text, position }) => (
+    <Notification
+        css={css`
+            background-color: ${ERROR_COLOR};
+            bottom: ${position}px;
+        `}
+    >
+        {text}
+    </Notification>
+)

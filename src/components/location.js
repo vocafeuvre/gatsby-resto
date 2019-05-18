@@ -29,7 +29,6 @@ const Location = () => (
             const address = data.site.siteMetadata.location.address
             const latitude = data.site.siteMetadata.location.latitude
             const longitude = data.site.siteMetadata.location.longitude
-            console.log(latitude)
 
             return (
                 <Hero
