@@ -3,12 +3,17 @@ import styled from "@emotion/styled"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
+import { mediaQuery } from "../components/styled"
 import { graphql } from "gatsby"
 
 const MenuSection = styled.section`
     width: 100%;
     padding: 20px;
     padding-top: 120px;
+
+    ${mediaQuery("mobile")} {
+        padding-top: 20px;
+    }
 `
 
 const MenuTitle = styled.h1`
@@ -39,8 +44,14 @@ const MenuItem = styled.div`
     padding: 15px;
     max-width: 700px;
     margin-bottom: 10px;
-
     background-color: white;
+
+    ${mediaQuery("mobile")} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
 `
 
 const MenuItemImage = styled.div`
@@ -70,6 +81,10 @@ const MenuItemContent = styled.div`
     & p {
         font-size: 0.9em;
         margin: 0;
+    }
+
+    ${mediaQuery("mobile")} {
+        padding-left: 0px;
     }
 `
 

@@ -8,13 +8,14 @@ import {
     SubHeroContent,
     SubHeroContentDetail,
     SubHeroContentTitle,
+    mediaQuery
 } from "./styled"
 
 const Second = () => (
     <StaticQuery
         query={secondQuery}
         render={data => {
-            const fixedImage = data.secondImage.childImageSharp.fixed
+            const fluidImage = data.secondImage.childImageSharp.fluid
             return (
                 <SubHero
                     css={css`
@@ -46,9 +47,16 @@ const Second = () => (
                             css={css`
                                 border: 10px solid white;
                                 box-shadow: 3px 3px 3px 3px #ccc;
+                                height: 230px;
+                                width: 390px;
+
+                                ${mediaQuery("mobile")} {
+                                    height: 180px;
+                                    width: 300px;
+                                }
                             `}
                         >
-                            <Img fixed={fixedImage} style={{
+                            <Img fluid={fluidImage} style={{
                                 display: "block"
                             }}/>
                         </div>
@@ -63,8 +71,8 @@ const secondQuery = graphql`
     query SecondQuery {
         secondImage: file(relativePath: { eq: "pasta-sub.jpg" }) {
             childImageSharp {
-                fixed(width: 400, height: 300) {
-                    ...GatsbyImageSharpFixed
+                fluid {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }

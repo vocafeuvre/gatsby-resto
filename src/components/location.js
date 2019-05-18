@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 import GoogleMapReact from "google-map-react"
 import { css } from "@emotion/core"
 
-import { Hero, HeroTitle, HeroSubtitle, HeroContent } from "./styled"
+import { Hero, HeroTitle, HeroSubtitle, HeroContent, mediaQuery } from "./styled"
 
 const MapMarker = ({ text }) => (
     <div
@@ -16,6 +16,9 @@ const MapMarker = ({ text }) => (
             padding: 5px;
             border-radius: 10px;
             font-size: 1.6em;
+            position: absolute;
+            left: -75px;
+            top: -1.9em;
         `}
     >
         {text}
@@ -44,8 +47,19 @@ const Location = () => (
                             css={css`
                                 border: 10px solid white;
                                 box-shadow: 3px 3px 3px 3px #ccc;
-                                height: 400px;
-                                width: 700px;
+
+                                ${mediaQuery("tablet")} {
+                                    height: 300px;
+                                    width: 440px;
+                                }
+
+                                ${mediaQuery("mobile")} {
+                                    height: 205px;
+                                    width: 300px;
+                                }
+
+                                height: 460px;
+                                width: 680px;
                             `}
                         >
                             <GoogleMapReact

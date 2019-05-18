@@ -4,12 +4,24 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
+import { mediaQuery } from "./styled"
+
 const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
 	max-width: 900px;
 	width: 70%;
     margin: 0;
+
+    ${mediaQuery("tablet")} {
+        width: 100%;
+    }
+
+    ${mediaQuery("mobile")} {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 
 const HeaderElement = styled.div`
@@ -20,6 +32,10 @@ const HeaderElement = styled.div`
 const HeaderNav = styled.nav`
     display: flex;
 	justify-content: space-around;
+
+    ${mediaQuery("mobile")} {
+        font-size: .7em;
+    }
 `
 const HeaderNavLinkCss = css`
     display: block;
@@ -37,7 +53,11 @@ const HeaderCss = css`
 	background: inherit;
     color: #ffffff;
 	width: 100%;
-	z-index: 1;
+    z-index: 1;
+    
+    ${mediaQuery("mobile")} {
+        position: relative;
+    }
 `
 
 const Header = ({ siteTitle }) => (
@@ -47,6 +67,7 @@ const Header = ({ siteTitle }) => (
                 <h1
                     css={css`
                         margin: 0;
+                        text-align: center;
                     `}
                 >
                     {siteTitle}

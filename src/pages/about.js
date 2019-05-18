@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 
 import Layout from "../components/layout"
+import { mediaQuery } from "../components/styled"
 
 const AboutSection = styled.section`
     width: 100%;
@@ -13,6 +14,10 @@ const AboutSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    ${mediaQuery("mobile")} {
+        padding: 20px;
+    }
 `
 
 const AboutTitle = styled.h1`
@@ -36,6 +41,10 @@ const AboutArticle = styled.article`
     width: 50%;
     background-color: #aa3333;
     text-align: center;
+
+    ${mediaQuery("mobile")} {
+        width: 100%;
+    }
 `
 
 const IndexPage = ({ data }) => (

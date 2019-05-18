@@ -10,6 +10,7 @@ import {
     SubHeroContentTitle,
     FormElement,
     FormButton,
+    mediaQuery,
 } from "./styled"
 
 const validate = values => {
@@ -100,6 +101,10 @@ const ActionCall = ({ notifySuccess, notifyError }) => {
             css={css`
                 color: #ffffff;
                 height: 70vh;
+
+                ${mediaQuery("mobile")} {
+                    height: 130%;
+                }
             `}
         >
             <SubHeroContent>

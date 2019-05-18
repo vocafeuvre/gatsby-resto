@@ -7,6 +7,23 @@ const ERROR_COLOR = "#cc6666"
 const SUCCESS_COLOR = "#007740"
 const MAIN_COLOR = "#aa3333"
 
+export const breakpoints = {
+    mobile: {
+        max: 749,
+        min: 0,
+    },
+    tablet: {
+        max: 960,
+        min: 750,
+    },
+}
+
+export const mediaQuery = screen => {
+    return `@media (max-width: ${
+        breakpoints[screen].max
+    }px) and (min-width: ${breakpoints[screen].min}px)`
+}
+
 export const Hero = styled.section`
     position: relative;
     height: 100vh;
@@ -17,12 +34,25 @@ export const Hero = styled.section`
     align-items: center;
     justify-content: center;
     padding: 20px;
+
+    ${mediaQuery("tablet")} {
+        padding: 10px
+    }
+
+    ${mediaQuery("mobile")} {
+        padding: 10px
+    }
 `
 
 export const HeroTitle = styled.h1`
     font-size: 2.6em;
     text-align: center;
     margin-bottom: 5px;
+
+    ${mediaQuery("mobile")} {
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
 `
 
 export const HeroSubtitle = styled.h2`
@@ -30,6 +60,11 @@ export const HeroSubtitle = styled.h2`
     text-align: center;
     margin-bottom: 5px;
     font-weight: 500;
+
+    ${mediaQuery("mobile")} {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
 `
 
 export const HeroContent = styled.div`
@@ -45,6 +80,14 @@ export const SubHero = styled.section`
     display: flex;
     justify-content: space-around;
     padding: 20px;
+
+    ${mediaQuery("mobile")} {
+        height: 100vh;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 export const SubHeroContent = styled.div`
@@ -133,7 +176,7 @@ const Notification = styled.div`
     width: 400px;
     height: ${NOTIF_HEIGHT_PX}px;
     padding: ${NOTIF_PADDING_PX}px;
-    font-size: .9em;
+    font-size: 0.9em;
     overflow: scroll;
     animation: pop 100ms ease-out;
 
@@ -145,6 +188,10 @@ const Notification = styled.div`
         100% {
             transform: scale(1);
         }
+    }
+
+    ${mediaQuery("mobile")} {
+        width: 320px;
     }
 `
 

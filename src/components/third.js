@@ -8,23 +8,32 @@ import {
     SubHeroContent,
     SubHeroContentDetail,
     SubHeroContentTitle,
+    mediaQuery
 } from "./styled"
 
 const Third = () => (
     <StaticQuery
         query={thirdQuery}
         render={data => {
-            const fixedImage = data.thirdImage.childImageSharp.fixed
+            const fluidImage = data.thirdImage.childImageSharp.fluid
             return (
                 <SubHero>
                     <SubHeroContent>
                         <div
                             css={css`
                                 border: 10px solid white;
+                                height: 230px;
+                                width: 390px;
+                                overflow: hidden;
+
+                                ${mediaQuery("mobile")} {
+                                    height: 180px;
+                                    width: 300px;
+                                }
                             `}
                         >
                             <Img
-                                fixed={fixedImage}
+                                fluid={fluidImage}
                                 style={{
                                     display: "block",
                                 }}
@@ -62,8 +71,8 @@ const thirdQuery = graphql`
     query ThirdQuery {
         thirdImage: file(relativePath: { eq: "happy-resto.jpg" }) {
             childImageSharp {
-                fixed(width: 400, height: 300) {
-                    ...GatsbyImageSharpFixed
+                fluid(maxWidth: 390) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }

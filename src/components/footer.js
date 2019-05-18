@@ -4,6 +4,8 @@ import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
+import { mediaQuery } from "../components/styled"
+
 const FooterContainer = styled.div`
     display: flex;
     justify-content: space-around;
@@ -12,12 +14,20 @@ const FooterContainer = styled.div`
     margin: 0;
     margin-bottom: 20px;
     padding: 20px;
+
+    ${mediaQuery("mobile")} {
+        flex-direction: column;
+        justify-content: flex-start;
+        max-width: 100%;
+        width: 100%;
+    }
 `
 
 const FooterCopyright = styled.div`
     display: flex;
     justify-content: center;
     font-size: 0.8em;
+    padding: 20px;
 `
 
 const FooterColumn = styled.div`
@@ -25,6 +35,10 @@ const FooterColumn = styled.div`
     flex-direction: column;
     max-width: 250px;
     padding: 0 10px;
+
+    ${mediaQuery("mobile")} {
+        margin-bottom: 20px;
+    }
 `
 
 const MediaNav = styled.nav`
@@ -60,6 +74,14 @@ const FooterCss = css`
     background-color: #000000;
     width: 100%;
     min-height: 300px;
+
+    ${mediaQuery("tablet")} {
+        position: relative;
+    }
+
+    ${mediaQuery("mobile")} {
+        position: relative;
+    }
 `
 
 const FooterColumnTitle = styled.h3`

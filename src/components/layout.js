@@ -23,6 +23,7 @@ import {
     DefaultNotification,
     NOTIF_HEIGHT_PX,
     NOTIF_DIST_TO_EDGE,
+    mediaQuery
 } from "./styled"
 
 const Layout = ({ children }) => {
@@ -83,6 +84,15 @@ const Layout = ({ children }) => {
                             css={css`
                                 padding-bottom: 300px;
                                 min-height: 100%;
+                                overflow: scroll;
+
+                                ${mediaQuery("tablet")} {
+                                    padding-bottom: 20px;
+                                }
+
+                                ${mediaQuery("mobile")} {
+                                    padding-bottom: 20px;
+                                }
                             `}
                         >
                             {children}
