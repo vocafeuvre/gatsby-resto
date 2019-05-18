@@ -11,8 +11,8 @@ module.exports = {
     instagram: "",
     location: {
       address: "Garden Bloc, Asiatown IT Park, Apas, Cebu City",
-      latitude: 10.3301882,
-      longitude: 123.9050796
+      latitude: 10.331708,
+      longitude: 123.905697
     }
   },
   plugins: [
