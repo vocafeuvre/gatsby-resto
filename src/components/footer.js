@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "@emotion/styled"
@@ -103,15 +102,15 @@ const Footer = ({ siteTitle, siteDescription, siteContacts, siteSocial }) => (
                     You can follow us in these social media platforms:
                 </FooterColumnDescription>
                 <MediaNav>
-                    <Link to={`https://twitter.com/${siteSocial.twitter}`} css={MediaLinkCss}>
+                    <a href={`https://twitter.com/${siteSocial.twitter}`} css={MediaLinkCss}>
                         Twitter
-                    </Link>
-                    <Link to={`https://facebook.com/${siteSocial.facebook}`} css={MediaLinkCss}>
+                    </a>
+                    <a href={`https://facebook.com/${siteSocial.facebook}`} css={MediaLinkCss}>
                         Facebook
-                    </Link>
-                    <Link to={`https://instagram.com/${siteSocial.instagram}`} css={MediaLinkCss}>
+                    </a>
+                    <a href={`https://instagram.com/${siteSocial.instagram}`} css={MediaLinkCss}>
                         Instagram
-                    </Link>
+                    </a>
                 </MediaNav>
             </FooterColumn>
             <FooterColumn>
