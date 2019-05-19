@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import { mediaQuery } from "../components/styled"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
 const MenuSection = styled.section`
@@ -90,8 +91,10 @@ const MenuItemContent = styled.div`
 
 const MenuPage = ({ data }) => {
     const menu = data.allMenuJson.edges[0].node.menu
+    const siteTitle = data.site.siteMetadata.title
     return (
         <Layout>
+            <SEO title={siteTitle} />
             <MenuSection>
                 <MenuTitle>Our Menu</MenuTitle>
                 <MenuSubtitle>
@@ -123,6 +126,11 @@ const MenuPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query {
+        site {
+            siteMetadata {
+                title
+            }
+        }
         allMenuJson {
             edges {
                 node {
