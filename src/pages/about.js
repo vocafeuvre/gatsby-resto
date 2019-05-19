@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
+import SEO from "../components/seo"
 
 import Layout from "../components/layout"
 import { mediaQuery } from "../components/styled"
@@ -48,6 +49,7 @@ const AboutArticle = styled.article`
 
 const IndexPage = ({ data }) => (
     <Layout>
+        <SEO title={data.site.siteMetadata.title} />
         <AboutSection>
             <AboutTitle>{data.site.siteMetadata.title}</AboutTitle>
             <AboutSubtitle>

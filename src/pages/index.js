@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Intro from "../components/intro"
 import Second from "../components/second"
@@ -11,8 +9,9 @@ import Location from "../components/location"
 import ActionCall from "../components/action-call"
 import NotifContext from "../components/contexts/notifContext";
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
     <Layout>
+		<SEO title={data.site.siteMetadata.title} />
 		<NotifContext.Consumer>
 			{ ({ notifySuccess, notifyError }) => (
 				<>
@@ -26,5 +25,16 @@ const IndexPage = () => (
 		</NotifContext.Consumer>
     </Layout>
 )
+
+export const pageQuery = graphql`
+    query IndexQuery {
+        site {
+            siteMetadata {
+                title
+                description
+            }
+        }
+    }
+`
 
 export default IndexPage
