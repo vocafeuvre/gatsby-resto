@@ -15,6 +15,11 @@ const FooterContainer = styled.div`
     margin-bottom: 20px;
     padding: 20px;
 
+    ${mediaQuery("tablet")} {
+        max-width: 100%;
+        width: 100%;
+    }
+    
     ${mediaQuery("mobile")} {
         flex-direction: column;
         justify-content: flex-start;
@@ -74,10 +79,6 @@ const FooterCss = css`
     background-color: #000000;
     width: 100%;
     min-height: 300px;
-
-    ${mediaQuery("tablet")} {
-        position: relative;
-    }
 
     ${mediaQuery("mobile")} {
         position: relative;

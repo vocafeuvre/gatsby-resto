@@ -9,7 +9,6 @@ const AboutSection = styled.section`
     width: 100%;
     padding: 20px;
     padding-top: 120px;
-    padding-bottom: 300px;
 
     display: flex;
     flex-direction: column;

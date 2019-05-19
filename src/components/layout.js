@@ -82,13 +82,9 @@ const Layout = ({ children }) => {
                         <Header siteTitle={data.site.siteMetadata.title} />
                         <main
                             css={css`
-                                padding-bottom: 300px;
+                                padding-bottom: 320px;
                                 min-height: 100%;
                                 overflow: scroll;
-
-                                ${mediaQuery("tablet")} {
-                                    padding-bottom: 20px;
-                                }
 
                                 ${mediaQuery("mobile")} {
                                     padding-bottom: 20px;
