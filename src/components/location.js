@@ -6,22 +6,34 @@ import { css } from "@emotion/core"
 import { Hero, HeroTitle, HeroSubtitle, HeroContent, mediaQuery } from "./styled"
 
 const MapMarker = ({ text }) => (
-    <div
-        css={css`
-            background-color: #aa3333;
-            color: #ffffff;
-            height: 1.9em;
-            width: 150px;
-            text-align: center;
-            padding: 5px;
-            border-radius: 10px;
-            font-size: 1.6em;
-            position: absolute;
-            left: -75px;
-            top: -1.9em;
-        `}
-    >
-        {text}
+    <div>
+        <div
+            css={css`
+                background-color: #aa3333;
+                color: #ffffff;
+                height: 1.9em;
+                width: 150px;
+                text-align: center;
+                padding: 5px;
+                border-radius: 10px;
+                font-size: 1.6em;
+                position: absolute;
+                left: -75px;
+                top: -1.9em;
+                margin: 0;
+            `}
+        >
+            {text}
+        </div>
+        <div css={css`
+            width: 0; 
+            height: 0; 
+            margin: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+
+            border-top: 10px solid #aa3333;
+        `}></div>
     </div>
 )
 
