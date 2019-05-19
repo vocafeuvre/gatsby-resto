@@ -1,12 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { mediaQuery } from "../components/styled"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
-
 
 const PromoPageSection = styled.section`
     width: 100%;
@@ -52,7 +50,6 @@ const PromoPageArticle = styled.article`
 class PromoPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const { previous, next } = this.props.pageContext
 
     return (
       <Layout>
