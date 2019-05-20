@@ -177,7 +177,7 @@ const Notification = styled.div`
     height: ${NOTIF_HEIGHT_PX}px;
     padding: ${NOTIF_PADDING_PX}px;
     font-size: 0.9em;
-    overflow: scroll;
+    overflow: auto;
     animation: pop 100ms ease-out;
 
     @keyframes pop {

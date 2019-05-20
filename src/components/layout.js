@@ -84,7 +84,6 @@ const Layout = ({ children }) => {
                             css={css`
                                 padding-bottom: 320px;
                                 min-height: 100%;
-                                overflow: scroll;
 
                                 ${mediaQuery("mobile")} {
                                     padding-bottom: 20px;
